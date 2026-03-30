@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 // Said
-// Add services to the container.
+// Add services
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
