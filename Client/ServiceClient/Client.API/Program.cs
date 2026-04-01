@@ -1,4 +1,7 @@
+using Client.Application.Interfaces;
+using Client.Application.UseCases;
 using Client.Infra.Persistence;
+using Client.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +12,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ClientDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<ImportClientsCsvUseCase>();
 
 
 

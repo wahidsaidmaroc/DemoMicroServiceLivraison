@@ -1,0 +1,8 @@
+Nom,TypeClient,Email,Telephone,Adresse,Ville,Pays,CIN,ICE
+Said Wahid,Particulier,said.wahid@example.ma,+212612345678,12 Avenue Mohammed V,Casa,Maroc,BE123456,
+Atlas Logistics,Entreprise,contact@atlas-logistics.ma,+212522334455,Parc Technopolis Rocade,Agadir,Maroc,,001234567000001
+Leila Amrani,Particulier,leila.amrani@gmail.com,+212661234567,45 Rue Ibn Battouta,Fes,Maroc,CD987654,
+ONG Solidarité,ONG,info@solidarite.ma,+212537001122,23 Boulevard Hassan II,Rabat,Maroc,,
+Ali,Particulier,ali@example.ma,+212600000001,Rue 10,Casa,Maroc,AA000001,
+Mohamed Benali,Entreprise,m.benali@benali-sarl.ma,+212661987654,Zone Industrielle Ain Sebaa,Tanger,Maroc,,002345678000002
+Nour,ONG,nour@ong.ma,+212600000002,Quartier Palmier,Fes,Maroc,,

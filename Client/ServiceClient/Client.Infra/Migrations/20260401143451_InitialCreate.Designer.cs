@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Client.Infra.Persistence.Migrations
+namespace Client.Infra.Migrations
 {
     [DbContext(typeof(ClientDbContext))]
-    [Migration("20260331115201_InitialClientSchema")]
-    partial class InitialClientSchema
+    [Migration("20260401143451_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,6 +67,30 @@ namespace Client.Infra.Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Client", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("7a57d85c-39d6-4f8e-9b74-15937c7e8f10"),
+                            CIN = "BE123456",
+                            DateCreation = new DateTime(2026, 4, 1, 8, 0, 0, 0, DateTimeKind.Utc),
+                            Email = "said.wahid@example.ma",
+                            ICE = "",
+                            Nom = "Said WAHID",
+                            Telephone = "+212612345678",
+                            TypeClient = "Particulier"
+                        },
+                        new
+                        {
+                            Id = new Guid("bc16ce57-5e0c-434b-8f23-dc0fbf5af3a1"),
+                            CIN = "",
+                            DateCreation = new DateTime(2026, 4, 1, 8, 15, 0, 0, DateTimeKind.Utc),
+                            Email = "contact@atlas-logistics.ma",
+                            ICE = "001234567000001",
+                            Nom = "Atlas Logistics",
+                            Telephone = "+212522334455",
+                            TypeClient = "Entreprise"
+                        });
                 });
 
             modelBuilder.Entity("Client.Domain.Entities.Client", b =>
@@ -100,6 +124,22 @@ namespace Client.Infra.Persistence.Migrations
 
                             b1.WithOwner()
                                 .HasForeignKey("ClientId");
+
+                            b1.HasData(
+                                new
+                                {
+                                    ClientId = new Guid("7a57d85c-39d6-4f8e-9b74-15937c7e8f10"),
+                                    LigneComplete = "12 Avenue Mohammed V",
+                                    Pays = "Maroc",
+                                    Ville = "Casablanca"
+                                },
+                                new
+                                {
+                                    ClientId = new Guid("bc16ce57-5e0c-434b-8f23-dc0fbf5af3a1"),
+                                    LigneComplete = "Parc Technopolis, Rocade Rabat-Sale",
+                                    Pays = "Maroc",
+                                    Ville = "Rabat"
+                                });
                         });
 
                     b.Navigation("Adresse")
