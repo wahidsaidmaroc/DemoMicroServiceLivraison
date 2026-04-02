@@ -1,10 +1,13 @@
 using Client.Application.UseCases;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Client.API.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[Authorize]
+
 public class UploadController(ImportClientsCsvUseCase useCase) : ControllerBase
 {
     [HttpPost("import-csv")]
